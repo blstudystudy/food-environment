@@ -1,0 +1,58 @@
+---
+title: "Relationship between types of food and negative impact on the environment"
+execute: 
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+# Run the following commands to load the libraries.
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+```
+
+```{r}
+# I downloaded the dataset from Kaggle and loaded it into my R environment. Once the data is loaded, I create a plot to visualize the relationship between types of food and their negative impact on the environment.
+
+#| label: plot
+# Load the dataset
+data <- read.csv("data/Food_Production.csv")
+# Explore the dataset
+# str(data)
+
+# Data manipulation
+# Depending on the structure of my dataset, I manipulated it to get it in the right format for plotting. Group by food type and get mean values of "Total emissions" and "The land used".
+summary_data <- data %>%
+  group_by(Food_product) %>%
+  summarize(
+    avg_emissions = mean(Total_emissions, na.rm = TRUE),
+    avg_land_use = mean("Land use per 100g protein (m² per 100g protein)", na.rm = TRUE)
+  )
+
+# Plotting the data
+# Use ggplot2 to create a plot showing the relationship between food types and their negative environmental impact.
+ggplot(data, aes(x = Food_product, y = Total_emissions, fill = Food_product)) +
+  geom_bar(stat = "identity") +
+  theme_minimal() +
+  labs(
+    title = "Environmental Impact of Different Food Types",
+    x = "Type of Food",
+    y = "Emissions"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+As the world’s population has expanded and gotten richer, the demand for food, energy and water has seen a rapid increase. Emissions from most plant based Foods are much lower than most animal based foods.
+
+The following data was pulled from Kaggle. Then, the relevant data frames were joined to analyze the relationship between types of food and negative impact on the environment.
+
+1. Looks like Beef is responsible for most of the greenhouse gas emissions.
+
+2. Plant based foods are hardly visible in the graph indicating their significantly low carbon footprint.
+
+3. Emissions from most plant based Foods are much lower than most animal based foods. 
+
+
+As the world’s population has expanded and gotten richer, the demand for food, energy and water has seen a rapid increase. Not only has demand for all three increased, but they are also strongly interlinked: food production requires water and energy; traditional energy production demands water resources; agriculture provides a potential energy source. This data analysis focuses on the environmental impacts of food. Ensuring everyone in the world has access to a nutritious diet in a sustainable way is one of the greatest challenges we face.

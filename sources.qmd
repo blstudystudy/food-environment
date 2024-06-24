@@ -1,0 +1,11 @@
+---
+title: "Sources"
+format: html
+---
+
+**Environment Impact of Food Production**
+
+[https://www.kaggle.com/datasets/selfvivek/environment-impact-of-food-production](https://www.kaggle.com/datasets/selfvivek/environment-impact-of-food-production)
+
+Depending on the structure of my dataset, I manipulated it to get it in the right format for plotting.
+Group by food type and get mean values of "Total emissions" and "The land used".

@@ -1,0 +1,15 @@
+---
+title: "About"
+---
+
+Hello, I’m Bingbing Luo, a 10th grader with a growing interest in data science and its applications.
+
+[https://github.com/blstudystudy](https://github.com/blstudystudy)
+
+My email is: blstudystudy2024@gmail.com
+
+My project: [Relationship between types of food and negative impact on the environment](https://github.com/blstudystudy/food-environment)
+
+[This project was created as a part of Kane’s Data Science Bootcamp.](https://bootcamp.davidkane.info)
+
+
